@@ -32,6 +32,6 @@ python mnist_visualize.py
 https://github.com/keras-team/keras/blob/950e5d063320a72ca61f2082c154a65a48766239/examples/mnist_cnn.py
 
 ### Grad-CAM implements
-https://github.com/insikk/Grad-CAM-tensorflow
-https://github.com/jacobgil/keras-grad-cam
-https://github.com/ysasaki6023/imageCounting
+https://github.com/insikk/Grad-CAM-tensorflow  
+https://github.com/jacobgil/keras-grad-cam  
+https://github.com/ysasaki6023/imageCounting  
