@@ -25,7 +25,19 @@ git clone git@github.com:gorogoroyasu/mnist-Grad-CAM.git project && cd project
 python mnist.py
 python mnist_visualize.py
 ```
+#examples
 
+## original
+![image](https://github.com/gorogoroyasu/mnist-Grad-CAM/blob/master/examples/original.png?raw=true)
+
+## heatmap
+![image](https://github.com/gorogoroyasu/mnist-Grad-CAM/blob/master/examples/heatmap.png?raw=true)
+
+## heatmap overrayed
+![image](https://github.com/gorogoroyasu/mnist-Grad-CAM/blob/master/examples/heatmap_overlaied.png?raw=true)
+
+## guided grad cam figure
+![image](https://github.com/gorogoroyasu/mnist-Grad-CAM/blob/master/examples/guided-grad-cam.png?raw=true)
 # reference
 
 ### CNN structure
