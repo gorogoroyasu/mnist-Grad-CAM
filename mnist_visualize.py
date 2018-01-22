@@ -47,8 +47,8 @@ for target_y_train_num in range(20):
     for i, w in enumerate(weights):
         cam += w * conv_output[:, :, i]
 
+    cam = np.maximum(cam, 0)
     cam = cam / np.max(cam)
-
     cam = resize(cam, (28,28), preserve_range=True)
 
     img = x_test[target_y_train_num].astype(float)
