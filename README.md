@@ -34,7 +34,7 @@ python mnist_visualize.py
 ![image](https://github.com/gorogoroyasu/mnist-Grad-CAM/blob/master/examples/heatmap.png?raw=true)
 
 ## heatmap overrayed
-![image](https://github.com/gorogoroyasu/mnist-Grad-CAM/blob/master/examples/heatmap_overlaied.png?raw=true)
+![image](https://github.com/gorogoroyasu/mnist-Grad-CAM/blob/master/examples/heatmap_overlayed.png?raw=true)
 
 ## guided grad cam figure
 ![image](https://github.com/gorogoroyasu/mnist-Grad-CAM/blob/master/examples/guided-grad-cam.png?raw=true)
