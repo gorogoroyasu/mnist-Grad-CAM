@@ -1,5 +1,5 @@
 import keras
-from keras.layers import Input, Dense, Lambda, merge
+from keras.layers import Input, Dense, Lambda
 from keras.models import Model
 from keras.datasets import mnist
 from keras.models import Sequential
@@ -33,6 +33,6 @@ class Model:
         self.before_soft_max = Dense(10)(self.e)
         self.predictions = Activation('softmax')(self.before_soft_max)
 
-        self.g = merge([self.before_soft_max, self.a, self.labels], mode=lambda x: K.gradients(x[0] * x[2], x[1]), output_shape=(self.a.shape))
-        self.cost = merge([self.labels, self.predictions], mode=lambda x: (-1) * K.sum(x[0] * K.log(x[1]), axis=1), output_shape=self.labels.shape)
-        self.gb_grad = merge([self.cost, self.inputs], mode=lambda x: K.gradients(x[0], x[1]), output_shape=(self.inputs.shape))
+        self.g = Lambda(lambda x: K.gradients(x[0] * x[2], x[1]), output_shape=list(self.a.shape))([self.before_soft_max, self.a, self.labels])
+        self.cost = Lambda(lambda x: (-1) * K.sum(x[0] * K.log(x[1]), axis=1), output_shape=list(self.labels.shape))([self.labels, self.predictions])
+        self.gb_grad = Lambda(lambda x: K.gradients(x[0], x[1]), output_shape=list(self.inputs.shape))([self.cost, self.inputs])
