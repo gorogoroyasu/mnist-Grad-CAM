@@ -6,25 +6,33 @@ I implemented [Grad-CAM](https://arxiv.org/abs/1610.02391) and applied it to mni
 if you find some bugs or anything else, feel free to open issues or PRs.
 
 # environment
+`Dockerfile` and `docker-compose.yml` are settled in `docker/cpu` and `docker/gpu`.
+They will make the executable environment on your machine by using docker.
+when you use GPU, you can choose `docker/gpu` dir, otherwise you have to use `docker/cpu`.
+The `docker/gpu` contents were well worked in my env, 
+```
+Ubuntu:16.04 
+Geforce 1080Ti
+```
+If you find some issues, please tell it to me via issues.
 
-```
-Python 3.6.2
-Keras==2.0.9
-numpy==1.13.3
-scikit-image==0.13.1
-h5py==2.7.1
-etc
-```
+`docker/cpu` worked fine on my local machine, which is Mac Book Pro 2016 Mid 2015.
 
 # usage
-
-all you need is the commands shown below.
 ```
-mkdir project
-git clone git@github.com:gorogoroyasu/mnist-Grad-CAM.git project && cd project
+cd docker/gpu(or docker/cpu)
+docker-compose up -d --build
+docker-compose exec tf bash
+# train
 python mnist.py
+# visualization: my_model.h5 created by the command above.
 python mnist_visualize.py
 ```
+the visualized image will be putted in `mnist_cams` dir, which will be automatically created.
+
+currently, this directory and `my_model.h5` names cannot be fixed by argments.  
+it is my future work.
+
 #examples
 
 ## original
