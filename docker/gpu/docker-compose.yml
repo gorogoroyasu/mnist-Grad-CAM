@@ -1,0 +1,11 @@
+version: "2.3"
+services:
+  tf:
+    image: tensorflow/tensorflow:1.12.0-py3
+    runtime: nvidia
+    volumes:
+      - ../../:/mnist-Grad-CAM
+    ports:
+      - 18800:18800
+    working_dir: /mnist-Grad-CAM
+    command: 'tail -f /dev/null'
