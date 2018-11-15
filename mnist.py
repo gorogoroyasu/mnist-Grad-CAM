@@ -1,10 +1,10 @@
-import keras
-from keras.datasets import mnist
-from keras import backend as K
+import tensorflow.keras as keras
+from tensorflow.keras.datasets import mnist
+from tensorflow.keras import backend as K
 import numpy as np
 import tensorflow as tf
-from keras.datasets import mnist
-from keras.models import Model
+from tensorflow.keras.datasets import mnist
+from tensorflow.keras.models import Model
 
 batch_size = 1000
 num_classes = 10

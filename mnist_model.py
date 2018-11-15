@@ -1,13 +1,13 @@
-import keras
-from keras.layers import Input, Dense, Lambda
-from keras.models import Model
-from keras.datasets import mnist
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D, MaxPooling2D
-from keras import backend as K
+import tensorflow.keras as keras
+from tensorflow.keras.layers import Input, Dense, Lambda
+from tensorflow.keras.models import Model
+from tensorflow.keras.datasets import mnist
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Flatten
+from tensorflow.keras.layers import Conv2D, MaxPooling2D
+from tensorflow.keras import backend as K
 import numpy as np
-from keras.layers.core import Activation
+from tensorflow.keras.layers import Activation
 
 class Model:
     def __init__(self):

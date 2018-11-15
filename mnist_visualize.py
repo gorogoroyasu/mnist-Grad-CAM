@@ -1,8 +1,9 @@
-import keras.backend as K
+import tensorflow.keras.backend as K
 import tensorflow as tf
 import numpy as np
-import keras, sys, cv2
-from keras.datasets import mnist
+import sys, cv2
+import tensorflow.keras as keras
+from tensorflow.keras.datasets import mnist
 K.set_learning_phase(1)
 img_rows, img_cols = 300, 400
 num_classes = 10
@@ -10,7 +11,7 @@ from mnist_model import Model as MM
 
 m = MM()
 
-from keras.models import Model
+from tensorflow.keras.models import Model
 model=Model(inputs=[m.labels, m.inputs], outputs=[m.predictions, m.g, m.a, m.gb_grad])
 model.summary()
 model.load_weights('my_model.h5')
