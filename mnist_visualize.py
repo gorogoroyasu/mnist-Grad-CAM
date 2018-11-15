@@ -4,10 +4,18 @@ import numpy as np
 import sys, cv2
 import tensorflow.keras as keras
 from tensorflow.keras.datasets import mnist
+from mnist_model import Model as MM
+from pathlib import Path
+
+# create mnist_cams directory. 
+# @todo: make the directory name changable with args.
+path = Path('mnist_cams')
+path.mkdir(exist_ok=True)
+del path
+
 K.set_learning_phase(1)
 img_rows, img_cols = 300, 400
 num_classes = 10
-from mnist_model import Model as MM
 
 m = MM()
 
