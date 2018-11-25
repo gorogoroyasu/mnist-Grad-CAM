@@ -23,10 +23,10 @@ class Model:
         self.cc = Conv2D(64, (3, 3), activation='relu')(self.bb)
         self.dd = MaxPooling2D(pool_size=(2, 2))(self.cc)
         self.ee = Conv2D(128, (3, 3), activation='relu')(self.dd)
-        self.a = Conv2D(128, (3, 3), activation='relu')(self.dd)
+        self.a = Conv2D(128, (3, 3), activation='relu')(self.ee)
         self.b = MaxPooling2D(pool_size=(2, 2))(self.a)
 
-        self.c = Flatten()(self.a)
+        self.c = Flatten()(self.b)
 
         self.d = Dense(64, activation='relu')(self.c)
         self.e = Dropout(0.5)(self.d)
